@@ -34,7 +34,7 @@ def read_prices(csvfile, _strptime=datetime.strptime):
             yield DataPoint(date=_strptime(row['Date'], '%Y-%m-%d').date(),
                             value=float(row['Adj Close']))
 
-def calc_percent_change(old_value, new_value):
+def calc_percent_change(new_value, old_value):
     return 100*(new_value/old_value - 1.)
 
 def parse_args():
